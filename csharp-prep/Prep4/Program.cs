@@ -6,10 +6,10 @@ class Program
     static void Main(string[] args)
     {
 
-        int number = -1;
-        List<int> numbers = new List<int>();
+        int number = -1; //creating number variable
+        List<int> numbers = new List<int>(); //Creating list
 
-        Console.WriteLine("Enter a list of number, type 0 when finished: "); //getting numberfrom user to add to the list 
+        Console.WriteLine("Enter a list of number, type 0 when finished: "); //getting number from user to add to the list 
 
 
         while (number != 0)
