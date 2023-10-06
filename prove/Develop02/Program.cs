@@ -6,7 +6,7 @@ class Program
     {
                     
         Entry entry = new Entry();
-        entry._date = DateTime.Now.ToString("MM/dd/yyyy");
+        entry._date = DateTime.Now.ToString();
         entry._prompt = "What was you favorite part of the day?";
         Console.WriteLine(entry._prompt);
         entry._answer = Console.ReadLine();
