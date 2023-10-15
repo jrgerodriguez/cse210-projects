@@ -53,7 +53,8 @@ class Program
 
         else if (activityNumber == "2")        
         {
-            journal.DisplayEntries();                                
+            journal.DisplayEntries();
+                                        
         }
 
 
