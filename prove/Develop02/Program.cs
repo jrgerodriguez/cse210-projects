@@ -71,6 +71,7 @@ class Program
             Console.Write("Enter the name of the file that you want to save your entries to: ");
             string fileName = Console.ReadLine();
             journal.SaveToFile(fileName);
+            
         }
 
 

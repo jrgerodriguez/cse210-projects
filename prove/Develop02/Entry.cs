@@ -7,9 +7,14 @@ public class Entry
     public string _answer;
     public string _scripture;
 
+    public string getSavedText() {
+        return $"{_date},{_scripture},{_prompt},{_answer}";
+    }
+
     public string Display() {
         string _entry = $"> Date: {_date}\n- You read this scripture today: {_scripture}\n- Prompt: {_prompt} \n- Your answer: {_answer}";
         return _entry;       
     }
 
 }
+
