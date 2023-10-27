@@ -15,12 +15,13 @@ public class Scripture
         {
             Word word = new Word(element);
             _words.Add(word);
-        }       
+        }
         
     }
 
     public void GetScripture() {
         Console.WriteLine(_reference.GetReference());
+        Console.WriteLine();
             foreach (Word word in _words)
         {
             Console.Write(word.GetWord() + " ");
@@ -30,9 +31,9 @@ public class Scripture
 
     }
 
-    public void HideWords() 
+    public void HideWords(int _difficulty) 
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < _difficulty; i++) //This is a counter
         {
         List<Word> visibleWords = new List<Word>();
         foreach (Word word in _words)        
@@ -56,7 +57,7 @@ public class Scripture
         int count = 0;
         foreach (Word word in _words)
         {
-            if (word.IsHidden() == true)
+            if (word.IsHidden())
             {
                 count++;
             }
