@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        BreathingActivity task1 = new BreathingActivity();
+        task1.GetStartingMessage();
     }
 }
