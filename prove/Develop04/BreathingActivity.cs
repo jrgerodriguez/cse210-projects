@@ -7,13 +7,53 @@ public class BreathingActivity : Activity
 
     }
 
-    public void DisplaySeriesMessages()
+    private void ShowBreathInMessage(int seconds)
     {
+       Console.WriteLine();
+       Console.Write("Breathe in...");
+       ShowCountDown(seconds);
+    }
 
+    private void ShowBreathOutMessage(int seconds)
+    {
+       Console.WriteLine();
+       Console.Write("Now breathe out...");
+       ShowCountDown(seconds);
     }
 
     public void RunBreathingActivity()
     {
+        Console.WriteLine("Get Ready...");
+        ShowSpinner(5); 
+        Console.WriteLine();
+        ShowBreathInMessage(2);
+        ShowBreathOutMessage(3);
+        Console.WriteLine();
         
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
+        
+        int i = 0;
+
+        while (DateTime.Now < endTime)
+        {
+            Console.WriteLine();
+            ShowBreathInMessage(4);
+            ShowBreathOutMessage(6);
+            Console.WriteLine();
+             
+            i++;
+
+            if (i >= _duration)
+            {
+                break;
+            }          
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Well Done!!!");
+        ShowSpinner(5);
+        Console.WriteLine();
+        ;
     }
 }
