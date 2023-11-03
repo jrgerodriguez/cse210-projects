@@ -61,7 +61,7 @@ protected void ShowSpinner(int seconds)
         {
             string s = animationStrings[i];
             Console.Write(s);
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.Write("\b \b");  
 
             i++;
