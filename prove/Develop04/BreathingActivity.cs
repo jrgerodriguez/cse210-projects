@@ -23,8 +23,7 @@ public class BreathingActivity : Activity
 
     public void RunBreathingActivity()
     {
-        Console.WriteLine("Get Ready...");
-        ShowSpinner(5); 
+        GetStartingMessage();
         Console.WriteLine();
         ShowBreathInMessage(2);
         ShowBreathOutMessage(3);
@@ -49,11 +48,7 @@ public class BreathingActivity : Activity
                 break;
             }          
         }
-
-        Console.WriteLine();
-        Console.WriteLine("Well Done!!!");
-        ShowSpinner(5);
-        Console.WriteLine();
-        ;
+        DisplayFinishingMessage(); 
+        
     }
 }

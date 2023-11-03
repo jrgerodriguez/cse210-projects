@@ -13,8 +13,9 @@ public Activity(string name, string description)
     _description = description;
 }
 
-public void GetStartingMessage()
+protected void GetStartingMessage()
 {
+    Console.Clear();
     Console.WriteLine($"Welcome to {_name}.");
     Console.WriteLine();
     Console.WriteLine(_description);
@@ -22,11 +23,20 @@ public void GetStartingMessage()
     Console.Write("How Long, in second, would you like for your session? ");
     string duration = Console.ReadLine();
     _duration = int.Parse(duration);
+    Console.Clear();
+    Console.WriteLine("Get Ready...");
+    ShowSpinner(5); 
 }
 
-public string DisplayFinishingMessage()
+protected void DisplayFinishingMessage()
 {
-    return $"You have completed another {_duration} seconds of the {_name}";
+    Console.WriteLine();
+    Console.WriteLine("Well Done!!!");
+    ShowSpinner(5);
+    Console.WriteLine();
+    Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
+    ShowSpinner(5);
+    Console.Clear();  
 }
 
 
