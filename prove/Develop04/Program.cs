@@ -20,20 +20,22 @@ class Program
         if (input == "1")
         {
         BreathingActivity act1 = new BreathingActivity();
-        act1.RunBreathingActivity();        
+        act1.RunBreathingActivity(); 
+        times++;       
         }
 
         else if (input == "2")
         {
         ReflectionActivity act2 = new ReflectionActivity();
-        act2.RunReflectionActivity();              
+        act2.RunReflectionActivity();  
+        times++;            
         }
 
         else if (input == "3")
         {
         ListingActivity act3 = new ListingActivity();
-        act3.RunListinActivity();  
-
+        act3.RunListinActivity(); 
+        times++;
         }
 
         else if (input == "4")
@@ -53,7 +55,7 @@ class Program
             Console.WriteLine();
         }
 
-        times++;
+        
 
         } while (true);
 
