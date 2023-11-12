@@ -11,6 +11,7 @@ public class Eternal : Goal
     {
         return $"2. [ ] {_name} {_description}";        
     }
+    
     public override string RegisterGoal()
     {
         return $"Congratulations you have earned {_points} points!";

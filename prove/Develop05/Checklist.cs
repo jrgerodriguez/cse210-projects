@@ -5,13 +5,14 @@ public class Checklist : Goal
 
     private int _times;
     private int _bonus;
-    private int timesDone = 0; 
+    private int timesDone = 0;
+     
     public Checklist(string name, string description, int points, int times, int bonus) : base(name, description, points)
     {
         _times = times;
         _bonus = bonus;
     }
-    
+
     public override string GetString()
     {
         string cross = " ";

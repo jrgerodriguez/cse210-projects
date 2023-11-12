@@ -25,6 +25,7 @@ class Program
         Console.Write("Select a choice from the menu: ");
         string input = Console.ReadLine();
 
+
         if (input == "1")
         {
             Console.WriteLine("The types of goals are: ");
@@ -36,8 +37,10 @@ class Program
 
             Console.Write("What is the name of your goal? ");
             string name = Console.ReadLine();
+
             Console.Write("What is a short description of it? ");
             string description = Console.ReadLine();
+
             Console.Write("What is the amount of points associated with this goal? ");
             string point = Console.ReadLine();
             int points = int.Parse(point);  
@@ -110,7 +113,6 @@ class Program
             }
 
             Console.WriteLine($"You now have {pointsEarned} points.");
-
         }
 
         
