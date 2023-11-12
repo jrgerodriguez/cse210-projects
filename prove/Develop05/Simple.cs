@@ -6,14 +6,23 @@ public class Simple : Goal
     {
 
     }
-
+    
     public override string GetString()
     {
-        return $"1. [ ] {_name} {_description}";        
+        string cross = " ";
+        if (_isCompleted == true)
+        {
+            cross = "X";
+        } 
+        return $"1. [{cross}] {_name} {_description}"; 
     }
 
     public override string RegisterGoal()
     {
-        
+        IsCompleted();
+        return $"Congratulations you have earned {_points} points!";
     }
+
+
+
 }
