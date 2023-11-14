@@ -28,6 +28,6 @@ public abstract class Goal
         _isCompleted = true;
     }
 
-    
+    public abstract string GetStringRepresentation();
 
 }

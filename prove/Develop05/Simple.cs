@@ -23,6 +23,11 @@ public class Simple : Goal
         return $"Congratulations you have earned {_points} points!";
     }
 
+    public override string GetStringRepresentation()
+    {
+        return $"{this.GetType()}:{_name},{_description},{_points}";
+    }
+
 
 
 }

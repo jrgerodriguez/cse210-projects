@@ -18,8 +18,8 @@ class Program
         Console.WriteLine("Menu Options:");
         Console.WriteLine("  1. Create New Goal");
         Console.WriteLine("  2. List Goals");
-        Console.WriteLine("  3.");
-        Console.WriteLine("  4.");
+        Console.WriteLine("  3. Save Goals");
+        Console.WriteLine("  4. Load Goals");
         Console.WriteLine("  5. Record Event");
         Console.WriteLine("  6. Quit");
         Console.Write("Select a choice from the menu: ");
@@ -81,10 +81,38 @@ class Program
             }
         }
 
+        
+        else if (input == "3")
+        {
+            Console.Write("What is the file name for the goal file? ");
+            string filename = Console.ReadLine();
+
+            using StreamWriter outputFile = new StreamWriter(filename, true);
+            outputFile.WriteLine(pointsEarned);
+            foreach (Goal goal in _goals)
+            {
+                outputFile.WriteLine(goal.GetStringRepresentation());
+            }
+        }
+
+
+        else if (input == "4")
+        {
+            Console.Write("What is the file name for the goal file? ");
+            string filename = Console.ReadLine();
+
+            string[] lines = System.IO.File.ReadAllLines(filename);
+            pointsEarned = int.Parse(lines[0]);
+            _goals.Clear();
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split(':');         
+            }
+        }
+
 
         else if (input == "5")
         {
-
             Console.Write("Which goal did you accomplish? ");
             string goalTypeInput = Console.ReadLine();
 
