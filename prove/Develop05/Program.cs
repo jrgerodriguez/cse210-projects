@@ -106,7 +106,9 @@ class Program
             _goals.Clear();
             for (int i = 1; i < lines.Length; i++)
             {
-                string[] parts = lines[i].Split(':');         
+                string[] parts = lines[i].Split(':');
+                               
+                        
             }
         }
 

@@ -37,7 +37,7 @@ public class Checklist : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"{this.GetType()}:{_name},{_description},{_points},{_times},{_bonus}";
+        return $"{this.GetType()}:{_name},{_description},{_points},{_times},{_bonus},{timesDone}";
     }
 
 }

@@ -22,5 +22,4 @@ public class Eternal : Goal
         return $"{this.GetType()}:{_name},{_description},{_points}";
     }
 
-
 }
