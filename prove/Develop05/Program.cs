@@ -107,8 +107,8 @@ class Program
             for (int i = 1; i < lines.Length; i++)
             {
                 string[] parts = lines[i].Split(':');
-                               
-                        
+                string[] attributes = parts[1].Split(',');
+                                        
             }
         }
 

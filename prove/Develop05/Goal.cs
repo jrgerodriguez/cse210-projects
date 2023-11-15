@@ -16,7 +16,10 @@ public abstract class Goal
 
     public abstract string GetString();
 
-    public abstract string RegisterGoal();
+    public virtual string RegisterGoal()
+    {
+        return $"Congratulations you have earned {_points} points";
+    }
 
     public int GetPoints()
     {
@@ -28,7 +31,10 @@ public abstract class Goal
         _isCompleted = true;
     }
 
-    public abstract string GetStringRepresentation();
+    public virtual string GetStringRepresentation()
+    {
+        return $"{this.GetType()}:{_name},{_description},{_points},{_isCompleted}";
+    }
 
     
 
