@@ -6,7 +6,7 @@ public class Checklist : Goal
     private int _times;
     private int _bonus;
     private int timesDone = 0;
-     
+
     public Checklist(string name, string description, int points, int times, int bonus) : base(name, description, points)
     {
         _times = times;
@@ -20,24 +20,24 @@ public class Checklist : Goal
         {
             cross = "X";
         }
-             
-        return $"3. [{cross}] {_name} {_description} -- Currently Completed: {timesDone}/{_times}"; 
+
+        return $"[{cross}] {_name} {_description} -- Currently Completed: {timesDone}/{_times}";
     }
 
-    public override string RegisterGoal()
+    public override int RegisterGoal()
     {
         timesDone++;
         if (timesDone == _times)
         {
             IsCompleted();
-            _points += _bonus;
+            return base.RegisterGoal() + _bonus;
         }
-        return $"Congratulations you have earned {_points} points!";
+        return base.RegisterGoal();
     }
 
-    public override string GetStringRepresentation()
+    public override string ToSavedString()
     {
-        return $"{this.GetType()}:{_name},{_description},{_points},{_times},{_bonus},{timesDone}";
+        return $"{this.GetType()},{_name},{_description},{_points},{_times},{_bonus},{timesDone}";
     }
 
 }

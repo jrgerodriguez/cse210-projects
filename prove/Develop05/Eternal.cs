@@ -9,12 +9,12 @@ public class Eternal : Goal
 
     public override string GetString()
     {
-        return $"2. [ ] {_name} {_description}";        
+        return $"[ ] {_name} {_description}";
     }
 
-    public override string GetStringRepresentation()
+    public override string ToSavedString()
     {
-        return $"{this.GetType()}:{_name},{_description},{_points}";
+        return $"{this.GetType()},{_name},{_description},{_points}";
     }
 
 }

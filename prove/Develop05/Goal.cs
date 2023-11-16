@@ -7,35 +7,29 @@ public abstract class Goal
     protected int _points;
     protected bool _isCompleted;
 
-    public Goal(string name, string description, int points)
+    public Goal(string name, string description, int points, bool isCompleted = false)
     {
         _name = name;
         _description = description;
         _points = points;
+        _isCompleted = isCompleted;
     }
+
 
     public abstract string GetString();
 
-    public virtual string RegisterGoal()
-    {
-        return $"Congratulations you have earned {_points} points";
-    }
-
-    public int GetPoints()
+    public virtual int RegisterGoal()
     {
         return _points;
     }
-
     public void IsCompleted()
     {
         _isCompleted = true;
     }
 
-    public virtual string GetStringRepresentation()
+    public virtual string ToSavedString()
     {
-        return $"{this.GetType()}:{_name},{_description},{_points},{_isCompleted}";
+        return $"{this.GetType().Name},{_name},{_description},{_points}";
     }
-
-    
 
 }
