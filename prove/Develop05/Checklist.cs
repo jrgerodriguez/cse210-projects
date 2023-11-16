@@ -2,15 +2,15 @@ using System;
 
 public class Checklist : Goal
 {
-
-    private int _times;
-    private int _bonus;
-    private int timesDone = 0;
-
-    public Checklist(string name, string description, int points, int times, int bonus) : base(name, description, points)
+    protected int _times;
+    protected int _bonus;
+    protected int _timesDone = 0;
+    public Checklist(string name, string description, int points, int times, int bonus, int timesDone = 0, bool isCompleted = false) : base(name, description, points, times, bonus, timesDone, isCompleted)
     {
         _times = times;
         _bonus = bonus;
+        _timesDone = timesDone;
+
     }
 
     public override string GetString()
@@ -21,13 +21,13 @@ public class Checklist : Goal
             cross = "X";
         }
 
-        return $"[{cross}] {_name} {_description} -- Currently Completed: {timesDone}/{_times}";
+        return $"[{cross}] {_name} {_description} -- Currently Completed: {_timesDone}/{_times}";
     }
 
     public override int RegisterGoal()
     {
-        timesDone++;
-        if (timesDone == _times)
+        _timesDone++;
+        if (_timesDone == _times)
         {
             IsCompleted();
             return base.RegisterGoal() + _bonus;
@@ -37,7 +37,7 @@ public class Checklist : Goal
 
     public override string ToSavedString()
     {
-        return $"{this.GetType()},{_name},{_description},{_points},{_times},{_bonus},{timesDone}";
+        return $"{this.GetType()},{_name},{_description},{_points},{_times},{_bonus},{_timesDone},{_isCompleted}";
     }
 
 }

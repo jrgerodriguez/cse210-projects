@@ -23,6 +23,7 @@ class Program
             Console.WriteLine("  4. Load Goals");
             Console.WriteLine("  5. Record Event");
             Console.WriteLine("  6. Quit");
+            Console.WriteLine("  7. Extra Points");
             Console.Write("Select a choice from the menu: ");
             string input = Console.ReadLine();
 
@@ -116,7 +117,7 @@ class Program
 
                     else if (parts[0] == "Checklist")
                     {
-                        _goals.Add(new Checklist(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5])));
+                        _goals.Add(new Checklist(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]), bool.Parse(parts[7])));
                     }
 
                 }
@@ -145,19 +146,45 @@ class Program
                 break;
             }
 
+
+            else if (input == "7")
+            {
+                Console.WriteLine();
+                Console.WriteLine("Register any act of service to others and you automatically multiply your current points by 2");
+                Console.WriteLine("You must register it on the same day it happened");
+                Console.Write("Did you serve others today (yes/no)? ");
+                string answer = Console.ReadLine();
+                if (answer == "yes")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Congratulations! Serving others will help you live true discipleship, here are your extra points");
+                    Console.WriteLine("Never forget: Verily I say unto you, Inasmuch as ye have adone it unto one of the bleast of these my cbrethren, ye have done it unto me.");
+                    Console.WriteLine();
+                    Console.WriteLine($"You have received {pointsEarned} extra points.");
+                    pointsEarned *= 2;
+                }
+
+                else 
+                {
+                    Console.WriteLine("Pray for opportunities to serve others, you will surely find some.");
+                }
+            }
+
         } while (true);
 
     }
     static void DisplayGoals()
     {
         Console.WriteLine();
-        
+
         Console.WriteLine("The goals are:");
 
         for (int i = 0; i < _goals.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {_goals[i].GetString()}");
         }
+
+        Console.WriteLine();
     }
 }
 

@@ -7,6 +7,7 @@ public abstract class Goal
     protected int _points;
     protected bool _isCompleted;
 
+
     public Goal(string name, string description, int points, bool isCompleted = false)
     {
         _name = name;
@@ -15,6 +16,13 @@ public abstract class Goal
         _isCompleted = isCompleted;
     }
 
+    public Goal(string name, string description, int points, int times, int bonus, int _timesDone = 0, bool isCompleted = false)
+    {
+        _name = name;
+        _description = description;
+        _points = points;
+        _isCompleted = isCompleted;
+    }
 
     public abstract string GetString();
 
