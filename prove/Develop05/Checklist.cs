@@ -5,12 +5,13 @@ public class Checklist : Goal
     protected int _times;
     protected int _bonus;
     protected int _timesDone = 0;
+
+
     public Checklist(string name, string description, int points, int times, int bonus, int timesDone = 0, bool isCompleted = false) : base(name, description, points, times, bonus, timesDone, isCompleted)
     {
         _times = times;
         _bonus = bonus;
         _timesDone = timesDone;
-
     }
 
     public override string GetString()
