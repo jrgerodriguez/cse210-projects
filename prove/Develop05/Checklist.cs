@@ -7,7 +7,7 @@ public class Checklist : Goal
     protected int _timesDone = 0;
 
 
-    public Checklist(string name, string description, int points, int times, int bonus, int timesDone = 0, bool isCompleted = false) : base(name, description, points, times, bonus, timesDone, isCompleted)
+    public Checklist(string name, string description, int points, int times, int bonus, int timesDone = 0) : base(name, description, points, times, bonus, timesDone)
     {
         _times = times;
         _bonus = bonus;
@@ -17,7 +17,7 @@ public class Checklist : Goal
     public override string GetString()
     {
         string cross = " ";
-        if (_isCompleted == true)
+        if (_timesDone == _times)
         {
             cross = "X";
         }
