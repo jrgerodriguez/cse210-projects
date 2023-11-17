@@ -38,7 +38,7 @@ public class Checklist : Goal
 
     public override string ToSavedString()
     {
-        return $"{this.GetType()},{_name},{_description},{_points},{_times},{_bonus},{_timesDone},{_isCompleted}";
+        return $"{this.GetType()},{_name},{_description},{_points},{_times},{_bonus},{_timesDone}";
     }
 
 }
