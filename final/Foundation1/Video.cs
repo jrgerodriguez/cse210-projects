@@ -33,7 +33,7 @@ public class Video
         foreach (var comment in comments)
         {
             Console.WriteLine($"{comment.GetName()}, {comment.GetText()}");
-        }        
+        }
     }
 
 }
