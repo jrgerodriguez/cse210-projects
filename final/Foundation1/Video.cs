@@ -1,8 +1,8 @@
 public class Video
 {
-    protected string Title;
-    protected string Author;
-    protected int Length;
+    private string Title;
+    private string Author;
+    private int Length;
 
     public List<Comment> comments = new List<Comment>();
 

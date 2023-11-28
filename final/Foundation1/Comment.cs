@@ -1,7 +1,7 @@
 public class Comment
 {
-    protected string Name;
-    protected string Text;
+    private string Name;
+    private string Text;
 
     public Comment(string name, string text)
     {
