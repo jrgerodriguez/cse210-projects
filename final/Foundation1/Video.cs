@@ -28,4 +28,12 @@ public class Video
         return $"Title: {Title}\nAuthor: {Author}\nLength: {Length}";
     }
 
+    public void GetCommentString()
+    {
+        foreach (var comment in comments)
+        {
+            Console.WriteLine($"{comment.GetName()}, {comment.GetText()}");
+        }        
+    }
+
 }

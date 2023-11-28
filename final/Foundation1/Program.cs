@@ -32,15 +32,9 @@ class Program
             Console.WriteLine("Comments:");
             Console.WriteLine($"This video has {video.NumberOfComments()} comments.");
             Console.WriteLine();
-
-            foreach(var comment in video.comments)
-            {
-                Console.WriteLine($"{comment.GetName()}: {comment.GetText()}");
-            }
-
+            video.GetCommentString();
             Console.WriteLine();
             Console.WriteLine();
         }
-
     }
 }
