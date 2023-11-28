@@ -2,13 +2,23 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+      static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
-        Console.WriteLine("This is in C#");
 
-        int number = 5;
-        number = 8;
-        number = number + 3;
+      SalaryEmployee employee1 = new SalaryEmployee();
+      employee1.SetName("Jorge");
+
+      HourlyEmployee employee2 = new HourlyEmployee();
+      employee2.SetName("Ever");
+
+      DisplayInfo(employee1);
+      DisplayInfo(employee2);
+
+    }
+    public static void DisplayInfo(Employee employee)
+    {
+      float pay = employee.CalculatePay();
+      string name = employee.GetName();
+      Console.WriteLine($"Name: {name} - Salary: {pay}"); 
     }
 }

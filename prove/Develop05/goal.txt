@@ -1,0 +1,4 @@
+250
+Simple,Read,I will read a chapter today ,50,True
+Simple,Teach,I will teach someone a lesson,50,False
+Checklist,Temple,go to the temple twice,50,2,100,2
