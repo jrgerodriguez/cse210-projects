@@ -1,11 +1,21 @@
 public class Comment
 {
-    public string Name;
-    public string Text;
+    protected string Name;
+    protected string Text;
 
     public Comment(string name, string text)
     {
         Name = name;
         Text = text;
+    }
+
+    public string GetName()
+    {
+        return Name;
+    }
+
+    public string GetText()
+    {
+        return Text;
     }
 }

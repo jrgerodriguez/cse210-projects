@@ -1,8 +1,8 @@
 public class Video
 {
-    public string Title;
-    public string Author;
-    public int Length;
+    protected string Title;
+    protected string Author;
+    protected int Length;
 
     public List<Comment> comments = new List<Comment>();
 
@@ -21,6 +21,11 @@ public class Video
     public void AddComment(string Name, string Text)
     {
         comments.Add(new Comment(Name, Text));
+    }
+
+    public string GetString()
+    {
+        return $"Title: {Title}\nAuthor: {Author}\nLength: {Length}";
     }
 
 }
