@@ -1,4 +1,5 @@
 using System.Reflection.Emit;
+using System.Text;
 
 public class Order
 {
@@ -42,20 +43,26 @@ public class Order
         return beforeShipping + shippingCost;
     }
 
-    public void GetPackingLabel()
+    public string GetPackingLabel()
     {
+        StringBuilder sb = new StringBuilder();
+
         foreach (var product in products)
         {
-            Console.WriteLine($"{product.PackingLabelString()}");
+            sb.AppendLine($"{product.PackingLabelString()}");
         }
+        return sb.ToString();
     }
 
-    public void GetShippingLabel()
+    public string GetShippingLabel()
     {
+        StringBuilder sb = new StringBuilder();
+
         foreach (var customer in customers)
         {
-            Console.WriteLine($"{customer.ShippingLabelString()}");
+            sb.AppendLine($"{customer.ShippingLabelString()}");
         }
+        return sb.ToString();
     }
 
 }

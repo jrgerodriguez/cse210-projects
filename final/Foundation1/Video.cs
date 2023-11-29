@@ -1,3 +1,5 @@
+using System.Text;
+
 public class Video
 {
     private string Title;
@@ -28,12 +30,16 @@ public class Video
         return $"Title: {Title}\nAuthor: {Author}\nLength: {Length}";
     }
 
-    public void GetCommentString()
+    public string GetCommentString()
     {
+        StringBuilder sb = new StringBuilder();
+
         foreach (var comment in comments)
         {
-            Console.WriteLine($"{comment.GetName()}, {comment.GetText()}");
+            sb.AppendLine($"{comment.GetName()}, {comment.GetText()}");
         }
+
+        return sb.ToString();
     }
 
 }

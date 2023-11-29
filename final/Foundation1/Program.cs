@@ -32,7 +32,7 @@ class Program
             Console.WriteLine("Comments:");
             Console.WriteLine($"This video has {video.NumberOfComments()} comments.");
             Console.WriteLine();
-            video.GetCommentString();
+            Console.WriteLine(video.GetCommentString());
             Console.WriteLine();
             Console.WriteLine();
         }

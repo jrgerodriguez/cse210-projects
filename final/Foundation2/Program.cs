@@ -10,22 +10,33 @@ class Program
         order1.AddProduct("iPhone 13", 1234, 650, 1);
         order1.AddProduct("iPhone Case", 4321, 15, 1);
         order1.AddProduct("iPhone Charger", 3412, 50, 2);
-        Address address1 = new Address("Smiley Rd", "Pleasanton", "CA", "USA");
+        Address address1 = new Address("465 Smiley Rd", "Pleasanton", "CA", "USA");
         order1.AddCustomer("Jorge Menjivar", address1);
         orders.Add(order1);
 
+        Order order2 = new Order();
+        order2.AddProduct("T-Shirts", 9876, 8, 20);
+        order2.AddProduct("Trousers", 6789, 15, 25);
+        order2.AddProduct("Socks (Pairs)", 7698, 5, 3);
+        Address address2 = new Address("4996 Cassells St", "North Bay", "ON", "CAN");
+        order2.AddCustomer("Harvey Bradley", address2);
+        orders.Add(order2);
+
         foreach (var order in orders)
         {
+            Console.WriteLine("NEW ORDER:");
+            Console.WriteLine();
             Console.WriteLine("Packing Label:");
-            order.GetPackingLabel();
+            Console.WriteLine(order.GetPackingLabel());
             Console.WriteLine();
-            Console.WriteLine("Shipping Label:"); 
-            order.GetShippingLabel();
+            Console.WriteLine("Shipping Label:");
+            Console.WriteLine(order.GetShippingLabel());
             Console.WriteLine();
-            Console.Write("Order Total: "); 
+            Console.Write("Order Total: ");
             Console.WriteLine($"${order.CalculateTotalPrice()}");
-                       
-        }              
+            Console.WriteLine();
+            Console.WriteLine();
+        }
 
     }
 }
