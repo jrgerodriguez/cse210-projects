@@ -36,10 +36,9 @@ public class Video
 
         foreach (var comment in comments)
         {
-            sb.AppendLine($"{comment.GetName()}, {comment.GetText()}");
+            sb.AppendLine($"{comment.GetName()}: {comment.GetText()}");
         }
 
         return sb.ToString();
     }
-
 }
