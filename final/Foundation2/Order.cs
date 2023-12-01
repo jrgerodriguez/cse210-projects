@@ -20,7 +20,6 @@ public class Order
     {
 
         int beforeShipping = 0;
-        int shippingCost = 0;
 
         foreach (var product in products)
         {
@@ -31,16 +30,16 @@ public class Order
         {
             if (customer.LivesInUsa() == true)
             {
-                shippingCost = 15;
+                beforeShipping += 15;
             }
 
             else
             {
-                shippingCost = 35;
+                beforeShipping += 35;
             }
         }
 
-        return beforeShipping + shippingCost;
+        return beforeShipping;
     }
 
     public string GetPackingLabel()
