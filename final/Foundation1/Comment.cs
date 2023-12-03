@@ -9,13 +9,9 @@ public class Comment
         Text = text;
     }
 
-    public string GetName()
+    // SMT Replace these getters with a Tostring() that returns the formatted text representing the Comment
+    public string ToStringComment()
     {
-        return Name;
-    }
-
-    public string GetText()
-    {
-        return Text;
+        return $"{Name}: {Text}";
     }
 }

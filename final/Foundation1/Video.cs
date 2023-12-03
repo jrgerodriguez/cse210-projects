@@ -8,6 +8,7 @@ public class Video
 
     public List<Comment> comments = new List<Comment>();
 
+    // SMT you could create the List<Comment> outside of this class and pass the List<Comment> into the constructor.
     public Video(string title, string author, int length)
     {
         Title = title;
@@ -20,6 +21,7 @@ public class Video
         return comments.Count;
     }
 
+    // SMT this works too
     public void AddComment(string Name, string Text)
     {
         comments.Add(new Comment(Name, Text));
@@ -32,11 +34,12 @@ public class Video
 
     public string GetCommentString()
     {
+        // SMT nice use of StringBuilder
         StringBuilder sb = new StringBuilder();
 
         foreach (var comment in comments)
         {
-            sb.AppendLine($"{comment.GetName()}: {comment.GetText()}");
+            sb.AppendLine($"{comment.ToStringComment()}");
         }
 
         return sb.ToString();

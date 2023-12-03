@@ -1,0 +1,75 @@
+diff --git a/final/Foundation1/Comment.cs b/final/Foundation1/Comment.cs
+index 5227634..6bb6e8c 100644
+--- a/final/Foundation1/Comment.cs
++++ b/final/Foundation1/Comment.cs
+@@ -9,6 +9,7 @@ public class Comment
+         Text = text;
+     }
+ 
++    // SMT Replace these getters with a Tostring() that returns the formatted text representing the Comment
+     public string GetName()
+     {
+         return Name;
+diff --git a/final/Foundation1/Video.cs b/final/Foundation1/Video.cs
+index 8aa2507..e5816ae 100644
+--- a/final/Foundation1/Video.cs
++++ b/final/Foundation1/Video.cs
+@@ -8,6 +8,7 @@ public class Video
+ 
+     public List<Comment> comments = new List<Comment>();
+ 
++    // SMT you could create the List<Comment> outside of this class and pass the List<Comment> into the constructor.
+     public Video(string title, string author, int length)
+     {
+         Title = title;
+@@ -20,6 +21,7 @@ public class Video
+         return comments.Count;
+     }
+ 
++    // SMT this works too
+     public void AddComment(string Name, string Text)
+     {
+         comments.Add(new Comment(Name, Text));
+@@ -32,6 +34,7 @@ public class Video
+ 
+     public string GetCommentString()
+     {
++        // SMT nice use of StringBuilder
+         StringBuilder sb = new StringBuilder();
+ 
+         foreach (var comment in comments)
+diff --git a/final/Foundation2/Address.cs b/final/Foundation2/Address.cs
+index a047787..59f0d09 100644
+--- a/final/Foundation2/Address.cs
++++ b/final/Foundation2/Address.cs
+@@ -1,3 +1,4 @@
++
+ public class Address
+ {
+     private string Street;
+@@ -16,7 +17,8 @@ public class Address
+ 
+     public bool IsInUsa()
+     {
+-        if (Country == "usa" || Country == "USA")
++        // SMT you can simplify your compare like this
++        if (Country.ToUpper() == "USA")
+         {
+             return true;
+         }
+diff --git a/final/Foundation2/Order.cs b/final/Foundation2/Order.cs
+index a73f87c..dcaefbc 100644
+--- a/final/Foundation2/Order.cs
++++ b/final/Foundation2/Order.cs
+@@ -3,9 +3,11 @@ using System.Text;
+ 
+ public class Order
+ {
++    // SMT an Order should only have ONE Customer
+     private List<Product> products = new List<Product>();
+     private List<Customer> customers = new List<Customer>();
+ 
++    // SMT add Customer to constructor. You could also add the List<Product>
+     public void AddProduct(string Name, int ProductId, int Price, int Quantity)
+     {
+         products.Add(new Product(Name, ProductId, Price, Quantity));
