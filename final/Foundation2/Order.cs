@@ -4,16 +4,17 @@ using System.Text;
 public class Order
 {
     private List<Product> products = new List<Product>();
-    private List<Customer> customers = new List<Customer>();
+
+    private Customer Customer;
 
     public void AddProduct(string Name, int ProductId, int Price, int Quantity)
     {
         products.Add(new Product(Name, ProductId, Price, Quantity));
     }
 
-    public void AddCustomer(string Name, Address Address)
+    public void SetCustomer(Customer customer)
     {
-        customers.Add(new Customer(Name, Address));
+        Customer = customer;
     }
 
     public int CalculateTotalPrice()
@@ -26,17 +27,14 @@ public class Order
             beforeShipping += product.GetPrice();
         }
 
-        foreach (var customer in customers)
+        if (Customer.LivesInUsa() == true)
         {
-            if (customer.LivesInUsa() == true)
-            {
-                beforeShipping += 15;
-            }
+            beforeShipping += 15;
+        }
 
-            else
-            {
-                beforeShipping += 35;
-            }
+        else
+        {
+            beforeShipping += 35;
         }
 
         return beforeShipping;
@@ -55,13 +53,7 @@ public class Order
 
     public string GetShippingLabel()
     {
-        StringBuilder sb = new StringBuilder();
-
-        foreach (var customer in customers)
-        {
-            sb.AppendLine($"{customer.ShippingLabelString()}");
-        }
-        return sb.ToString();
+        return Customer.ShippingLabelString();
     }
 
 }
