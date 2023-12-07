@@ -1,11 +1,11 @@
 
 public class Event
 {
-    protected string _title;
-    protected string _description;
-    protected string _date;
-    protected string _time;
-    protected Address _address;
+    private string _title;
+    private string _description;
+    private string _date;
+    private string _time;
+    private Address _address;
 
     public Event(string title, string description, string date, string time, Address address)
     {
