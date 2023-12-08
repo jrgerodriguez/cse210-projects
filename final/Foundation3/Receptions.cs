@@ -9,7 +9,7 @@ public class Receptions : Event
 
     public string GetFullDetails()
     {
-        return $"{GetStandard()}\nEmail for reservations: {_email}";
+        return $"{GetStandard()}\nType: {GetType()}\nEmail for reservations: {_email}";
     }
 
 }

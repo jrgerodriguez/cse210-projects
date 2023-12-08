@@ -11,7 +11,7 @@ public class Lectures : Event
 
     public string GetFullDetails()
     {
-        return $"{GetStandard()}\nSpeaker: {_speaker}\nCapacity: {_capacity} attendees";
+        return $"{GetStandard()}\nType: {GetType()}\nSpeaker: {_speaker}\nCapacity: {_capacity} attendees";
     }
 
 }

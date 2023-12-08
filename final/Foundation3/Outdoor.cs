@@ -9,7 +9,7 @@ public class Outdoor : Event
 
     public string GetFullDetails()
     {
-        return $"{GetStandard()}\nWeather forecast for the day: {_weather}";
+        return $"{GetStandard()}\nType: {GetType()}\nWeather forecast for the day: {_weather}";
     }
 
 }
